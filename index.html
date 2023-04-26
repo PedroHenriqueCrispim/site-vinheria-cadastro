@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+<html>
+<head>
+	<title>Cadastro de Usuário</title>
+	<script>
+		function validarFormulario() {
+			// Verifica se o campo nome foi preenchido
+			var nome = document.getElementById("nome");
+			if (nome.value.trim() == "") {
+				alert("Por favor, preencha o campo nome.");
+				nome.focus();
+				return false;
+			}
+
+			// Verifica se o campo e-mail foi preenchido
+			var email = document.getElementById("email");
+			if (email.value.trim() == "") {
+				alert("Por favor, preencha o campo e-mail.");
+				email.focus();
+				return false;
+			}
+
+			// Verifica se o campo senha foi preenchido
+			var senha = document.getElementById("senha");
+			if (senha.value.trim() == "") {
+				alert("Por favor, preencha o campo senha.");
+				senha.focus();
+				return false;
+			}
+
+			// Verifica se o campo confirmação de senha foi preenchido
+			var confirmaSenha = document.getElementById("confirma-senha");
+			if (confirmaSenha.value.trim() == "") {
+				alert("Por favor, preencha o campo confirmação de senha.");
+				confirmaSenha.focus();
+				return false;
+			}
+
+			// Verifica se as senhas digitadas são iguais
+			if (senha.value != confirmaSenha.value) {
+				alert("As senhas digitadas não são iguais. Por favor, verifique.");
+				senha.focus();
+				return false;
+				}
+
+			// Se chegou até aqui, o formulário foi preenchido corretamente
+			alert("Cadastro realizado com sucesso! Obrigado por se cadastrar.");
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<!-- código do cabeçalho padrão -->
+	</header>
+
+	<main>
+		<section>
+			<h2>Cadastro de Usuário</h2>
+            <br>
+            <br>
+			<form id="form-cadastro" onsubmit="return validarFormulario();">
+				<label for="nome">Nome completo:</label>
+				<input type="text" name="nome" id="nome">
+                <br>
+                <br>
+				<label for="email">E-mail:</label>
+				<input type="email" name="email" id="email">
+                <br>
+                <br>
+				<label for="senha">Senha:</label>
+				<input type="password" name="senha" id="senha">
+                <br>
+                <br>
+				<label for="confirma-senha">Confirme a senha:</label>
+				<input type="password" name="confirma-senha" id="confirma-senha">
+                <br>
+                <br>
+				<button type="submit">Cadastrar</button>
+			</form>
+		</section>
+
+		<!-- outras seções da página -->
+
+	</main>
+
+	<footer>
+        @2023-todos os direitos reservados.
+	</footer>
+
+    <script src="script.js"></script>
+</body>
+</body>
+</html>
